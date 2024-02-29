@@ -1,0 +1,82 @@
+[
+    {
+        "type": "DESIGN",
+        "title": "CREATIVE TEMPLATE",
+        "image": "./img/dog.png",
+        "position": "right: -0px; bottom: -2px;",
+        "color": "black",
+        "background_color": "#F8E71C"
+    },
+    {
+        "type": "BRANDING",
+        "title": "AMAZING STARTUP",
+        "image": "./img/woman.png",
+        "position": "right: -60px; bottom: -2px;",
+        "color": "white",
+        "background_color": "#FF564F"
+    },
+    {
+        "type": "DEVELOPMENT",
+        "title": "AMAZING STARTUP",
+        "image": "./img/woman.png",
+        "position": "right: -60px; bottom: -2px;",
+        "color": "white",
+        "background_color": "#F8E71C"
+    },
+    {
+        "type": "PRODUCTS",
+        "title": "AMAZING STARTUP",
+        "image": "./img/dog.png",
+        "position": "right: -0px; bottom: -2px;",
+        "color": "black",
+        "background_color": "#4ffffc"
+    },
+    {
+        "type": "PRODUCTS",
+        "title": "AMAZING STARTUP",
+        "image": "./img/woman.png",
+        "position": "right: -60px; bottom: -2px;",
+        "color": "white",
+        "background_color": "#FF564F"
+    },
+    {
+        "type": "PRODUCTS",
+        "title": "AMAZING STARTUP",
+        "image": "./img/woman.png",
+        "position": "right: -60px; bottom: -2px;",
+        "color": "white",
+        "background_color": "#aa4fff"
+    },
+    {
+        "type": "DESIGN",
+        "title": "AMAZING STARTUP",
+        "image": "./img/dog.png",
+        "position": "right: -0px; bottom: -2px;",
+        "color": "black",
+        "background_color": "#FF564F"
+    },
+    {
+        "type": "BRANDING",
+        "title": "AMAZING STARTUP",
+        "image": "./img/woman.png",
+        "position": "right: -60px; bottom: -2px;",
+        "color": "white",
+        "background_color": "#F8E71C"
+    },
+    {
+        "type": "DESIGN",
+        "title": "AMAZING STARTUP",
+        "image": "./img/dog.png",
+        "position": "right: -0px; bottom: -2px;",
+        "color": "black",
+        "background_color": "#aa4fff"
+    },
+    {
+        "type": "BRANDING",
+        "title": "AMAZING STARTUP",
+        "image": "./img/woman.png",
+        "position": "right: -60px; bottom: -2px;",
+        "color": "white",
+        "background_color": "#4ffffc"
+    }
+]

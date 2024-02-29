@@ -1,0 +1,117 @@
+:root {
+    --primary-color-black: #111111;
+    --primary-color-white: white;
+    --primary-width-screen: 1200px;
+    --primary-btn-color: #ff564f;
+    --primary-text-description-color: #111111;
+    --font-inknut: "Inknut Antiqua", serif;
+    --font-DM: "DM Sans", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
+    ;
+}
+
+html {
+    min-width: 100vw;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    overflow-x: clip;
+}
+
+main {
+    width: 100%;
+    overflow-x: clip;
+}
+
+header {
+    background-color: var(--primary-color-black);
+    height: 100vh;
+}
+
+.half-screen {
+    width: 50%;
+}
+
+.text-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-center-x {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-box {
+    display: flex;
+    align-items: center;
+    /* flex-wrap: wrap; */
+}
+
+.pos-relative {
+    position: relative;
+}
+
+.pos-absolute {
+    position: absolute;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}

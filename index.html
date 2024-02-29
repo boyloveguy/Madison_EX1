@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Nunito:wght@200;300;400;700;800;900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <main class="main">
+        <header>
+            <!-- Nav BAR -->
+            <section>
+                <div class="navbar">
+                    <div class="header-bg flex-box" style="justify-content: space-between;">
+                        <div class="header-logo">AGENCY</div>
+                        <div class="nav-right flex-box">
+                            <nav class="nav-link full-width">
+                                <div class="nav-link-container">
+                                    <a class="nav-option" href="#about">About</a>
+                                    <a class="nav-option" href="#portfolio" style="margin: 0px 60px;">Portfolio</a>
+                                    <a class="nav-option" href="#contact">Contact</a>
+                                </div>
+                                <div id="sidebar" class="sidebar">
+                                    <a href="javascript:void(0)" class="close-btn" onclick="closeSidebar()">×</a>
+                                    <a href="#about">About</a>
+                                    <a href="#portfolio">Portfolio</a>
+                                    <a href="#contact">Contact</a>
+                                </div>
+                                <div class="header-menu-icon">
+                                    <img onclick="openSidebar()" src="./img/menu.svg" alt="image">
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-bg">
+
+                    <!-- HEADER-CONTENT -->
+                    <div>
+                        <div class="pos-relative header-content-container header-active"
+                            style="z-index: 1; width: 100%; padding-top: 70px;">
+                            <div class="header-content">
+                                <h1 class="header-title">WE CREATE AMAZING SITES WITH EASE</h1>
+                                <div class="flex-box">
+                                    <img src="./img/Object.png" alt="image">
+                                    <h1 class="header-disctiption">A PEEP AT SOME DISTANT ORB HAS POWER TO RAISE AND
+                                        PURIFY
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="header-img-container">
+                                <img class="header-shadow-img" src="./img/Combined Shape.png" alt="image">
+                                <img class="header-bg-img" src="./img/Rectangle.png" alt="image">
+                                <img class="header-img" src="./img/Bitmap.png" alt="image">
+                            </div>
+                        </div>
+                        <div class="pos-relative header-content-container"
+                            style="z-index: 1; width: 100%; padding-top: 70px;">
+                            <div class="header-content">
+                                <h1 class="header-title">HELLO WORLD! HELLO WORLD! HELLO WORLD!</h1>
+                                <div class="flex-box">
+                                    <img src="./img/Object.png" alt="image">
+                                    <h1 class="header-disctiption">A PEEP AT SOME DISTANT ORB HAS POWER TO RAISE AND
+                                        PURIFY
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="header-img-container">
+                                <img class="header-shadow-img" src="./img/Combined Shape.png" alt="image">
+                                <img class="header-bg-img" src="./img/Rectangle.png" alt="image">
+                                <img class="header-img" src="./img/Bitmap.png" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </header>
+        <!-- LETS TAKE ADVANTAGE -->
+        <section>
+            <div class="body-advantage-bg">
+                <div class="body-advantage-btn-container" style="padding: 150px 0px;">
+                    <button onclick="prevSlideHeader()" class="body-advantage-btn-left" style="margin-right: 3px;"><img
+                            src="./img/Triangle-left.svg" alt="image"></button>
+                    <button onclick="nextSlideHeader()" class="body-advantage-btn-right"><img
+                            src="./img/Triangle-right.svg" alt="image"></button>
+                    <span class="body-advantage-tab-page"></span>
+                </div>
+                <hr>
+                <div class="flex-box body-advantage-layout" style="padding: 150px 0px;">
+                    <div class="body-advantage-video half-screen">
+                        <div class="body-advantage-video-banner text-center-x">
+                            <img class="bg-video" src="./img/Image-Advantage.png" alt="image">
+                            <button class="btn-play" onclick="handlePlayVideo()"><img class="" src="./img/play.svg"
+                                    alt="image"></button>
+                        </div>
+                        <div class="body-advantage-video-play">
+
+                        </div>
+                    </div>
+                    <div class="half-screen">
+                        <h1 class="body-advantage-title">LETS TAKE ADVANTAGE</h1>
+                        <P>ABLE CLOUD BENEATH WAS DISHED</P>
+                        <P style="margin: 30px 0;">Best for active freelancers and designers who need more projects and
+                            premium features code
+                            and unlock more.</P>
+                        <div class="flex-box">
+                            <button class="btn-learn_more">LEARN MORE</button>
+                            <button>Explore Services</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR CORE FEATURES -->
+        <section id="about" style="background-color: var(--primary-color-black);">
+            <div class="body-features-bg">
+                <div class="flex-box body-features-layout">
+                    <div class="half-screen">
+                        <h1 class="body-features-title">OUR CORE FEATURES</h1>
+                    </div>
+                    <div class="half-screen">
+                        <p style="margin-left: 15px;" class="body-features-description">Minuteness of the parts formed a
+                            great hindrance to my speed, resolved, contrary to my first intention, to make the being.
+                            Minuteness of the parts formed a great hindrance to my speed, resolved, contrary to my first
+                            intention, to make the being.</p>
+                    </div>
+                </div>
+                <div class="flex-box slide-container" style="margin: 135px 0 80px 0; justify-content: space-between;">
+                    <div class="flex-box body-features-slide-card">
+                        <div class="flex-box body-features-cards">
+                            <div class="body-features-card" style="background-color: #9013FE;">
+                                <div style="padding: 48px;">
+                                    <img src="./img/icon-card.svg" alt="image">
+                                    <h3>WHITE LABEL</h3>
+                                    <p class="body-features-card-description">Minuteness of the parts formed a great
+                                        hindrance
+                                        to my speed, resolved, contrary to my first intention, to make the being.</p>
+                                </div>
+                            </div>
+                            <div class="body-features-card" style="background-color: #417505;">
+                                <div style="padding: 48px;">
+                                    <img src="./img/icon-card-two.svg" alt="image">
+                                    <h3>CORE EXPORT</h3>
+                                    <p class="body-features-card-description">Minuteness of the parts formed a great
+                                        hindrance
+                                        to my speed, resolved, contrary to my first intention, to make the being.</p>
+                                </div>
+                            </div>
+                            <div class="body-features-card" style="background-color: #F8E71C;">
+                                <div style="padding: 48px;">
+                                    <img src="./img/icon-card-two.svg" alt="image">
+                                    <h3>CORE EXPORT</h3>
+                                    <p class="body-features-card-description">Minuteness of the parts formed a great
+                                        hindrance
+                                        to my speed, resolved, contrary to my first intention, to make the being.</p>
+                                </div>
+                            </div>
+                            <div class="body-features-card" style="background-color: #4ffffc;">
+                                <div style="padding: 48px;">
+                                    <img src="./img/icon-card-two.svg" alt="image">
+                                    <h3>CORE EXPORT</h3>
+                                    <p class="body-features-card-description">Minuteness of the parts formed a great
+                                        hindrance
+                                        to my speed, resolved, contrary to my first intention, to make the being.</p>
+                                </div>
+                            </div>
+                            <div class="body-features-card" style="background-color: #FF564F;">
+                                <div style="padding: 48px;">
+                                    <img src="./img/icon-card-two.svg" alt="image">
+                                    <h3>CORE EXPORT</h3>
+                                    <p class="body-features-card-description">Minuteness of the parts formed a great
+                                        hindrance
+                                        to my speed, resolved, contrary to my first intention, to make the being.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div onclick="currentSlideOur(1)" class="body-features-slide active-highlight"></div>
+                    <div onclick="currentSlideOur(2)" class="body-features-slide"></div>
+                    <div onclick="currentSlideOur(3)" class="body-features-slide"></div>
+                    <div onclick="currentSlideOur(4)" class="body-features-slide" style="margin-right: 0 !important;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHECK OUR PROJECTS -->
+        <section id="portfolio">
+            <div class="body-projects-bg">
+                <div class="flex-box body-projects-layout">
+                    <div class="half-screen">
+                        <h1 class="body-projects-title">CHECK OUR PROJECTS</h1>
+                    </div>
+                    <div class="half-screen">
+                        <p style="margin-left: 15px;" class="body-projects-description">Minuteness of the parts formed a
+                            great hindrance to my speed, resolved, contrary to my first intention, to make the being.
+                            Minuteness of the parts formed a great hindrance to my speed, resolved, contrary to my first
+                            intention, to make the being.</p>
+                    </div>
+                </div>
+                <hr style="margin: 87px 0 73px 0;">
+                <div class="grid-container">
+                    <div class="grid-item body-projects-menu">
+                        <h3 class="body-projects-menu-title">PORTFOLIO</h3>
+                        <div class="body-projects-menu-side">
+                            <button onclick="changeTab('ALL')" class="body-projects-btn-active">All</button>
+                            <button onclick="changeTab('DESIGN')">Design</button>
+                            <button onclick="changeTab('DEVELOPMENT')">Development</button>
+                            <button onclick="changeTab('BRANDING')">Branding</button>
+                            <button onclick="changeTab('PRODUCTS')">Products</button>
+                        </div>
+                    </div>
+                    <div class="grid-item body-projects-menu-selection">
+                        <h3 class="body-projects-menu-title">PORTFOLIO</h3>
+                        <div class="body-projects-menu-side">
+                            <select name="cars" id="cars" onchange="changeTab(value)">
+                                <option value="ALL">All</option>
+                                <option value="DESIGN">Design</option>
+                                <option value="DEVELOPMENT">Development</option>
+                                <option value="BRANDING">Branding</option>
+                                <option value="PRODUCTS">Products</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="grid-container-card">
+                        <div class="grid-container-card body-projects-card-container">
+                        </div>
+                        <div class="text-center-x">
+                            <button class="btn-load_more">LOAD MORE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHAT OUR CLIENTS SAY -->
+        <section style="background-color: var(--primary-color-black);">
+            <div class="body-say-bg">
+                <div class="flex-box body-say-layout">
+                    <div class="half-screen">
+                        <h1 class="body-say-title">WHAT OUR CLIENTS SAY</h1>
+                        <p>TESTIMONIALS</p>
+                    </div>
+                    <div class="half-screen pos-relative">
+                        <div class="body-say-card-container">
+                            <div class="body-say-card-slide">
+                                <div class="body-say-card" style="padding: 48px; background: #417505;">
+                                    <div class="body-say-card-header flex-box">
+                                        <img src="./img/OvalWoman.png" alt="image">
+                                        <div style="margin: 26px;">
+                                            <h2>HELENA BRAUER</h2>
+                                            <p>Apple Inc.</p>
+                                        </div>
+                                    </div>
+                                    <div class="body-say-card-content">
+                                        <p>What looked like a small patch of purple grass, above five feet square, was
+                                            moving across the sand in their direction. When it came near enough he
+                                            perceived
+                                            that it was not grass; there were no blades, but only purple roots. The
+                                            roots
+                                            were revolving, for each small plant in the whole patch, like the spokes of
+                                            a
+                                            rimless wheel.</p>
+                                    </div>
+                                </div>
+                                <div class="body-say-card" style="padding: 48px; background: #9013FE;">
+                                    <div class="body-say-card-header flex-box">
+                                        <img src="./img/OvalMan.png" alt="image">
+                                        <div style="margin: 26px;">
+                                            <h2>KAY TOTLEBEN</h2>
+                                            <p>Microsoft.</p>
+                                        </div>
+                                    </div>
+                                    <div class="body-say-card-content">
+                                        <p>What looked like a small patch of purple grass, above five feet square, was
+                                            moving across the sand in their direction. When it came near enough he
+                                            perceived
+                                            that it was not grass; there were no blades, but only purple roots. The
+                                            roots
+                                            were revolving, for each small plant in the whole patch, like the spokes of
+                                            a
+                                            rimless wheel.</p>
+                                    </div>
+                                </div>
+                                <div class="body-say-card" style="padding: 48px; background: #417505;">
+                                    <div class="body-say-card-header flex-box">
+                                        <img src="./img/OvalWoman.png" alt="image">
+                                        <div style="margin: 26px;">
+                                            <h2>HELENA BRAUER</h2>
+                                            <p>Apple Inc.</p>
+                                        </div>
+                                    </div>
+                                    <div class="body-say-card-content">
+                                        <p>What looked like a small patch of purple grass, above five feet square, was
+                                            moving across the sand in their direction. When it came near enough he
+                                            perceived
+                                            that it was not grass; there were no blades, but only purple roots. The
+                                            roots
+                                            were revolving, for each small plant in the whole patch, like the spokes of
+                                            a
+                                            rimless wheel.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="body-say-bg-logo" style="padding-bottom: 0 !important;">
+                <div class="body-features-btn-container" style="padding:0px;">
+                    <button onclick="prevSlide()" class="body-stay-btn-left" style="margin-right: 3px;"><img
+                            src="./img/Triangle-left.svg" alt="image"></button>
+                    <button onclick="nextSlide()" class="body-stay-btn-right"><img src="./img/Triangle-right.svg"
+                            alt="image"></button>
+                </div>
+                <hr style="margin: 87px 0 73px 0;">
+                <div class="logo-container">
+                    <img src="./img/Atlassian.png" alt="image">
+                    <img src="./img/Slack.png" alt="image">
+                    <img src="./img/Dropbox.png" alt="image">
+                    <img src="./img/Shopify.png" alt="image">
+                    <img src="./img/Google.png" alt="image">
+                </div>
+                <hr style="margin-top: 87px">
+            </div>
+        </section>
+
+        <section>
+            <div class="body-post-bg">
+                <div class="flex-box body-post-layout">
+                    <div class="half-screen">
+                        <h1 class="body-projects-title">OUR LATEST BLOG POSTS</h1>
+                    </div>
+                    <div class="half-screen">
+                        <p style="margin-left: 15px;" class="body-projects-description">Minuteness of the parts formed a
+                            Minuteness of the parts formed a great hindrance to my speed, resolved, contrary to my first
+                            intention, to make the being. Minuteness of the parts formed a great hindrance to my speed,
+                            resolved, contrary to my first intention, to make the being.</p>
+                    </div>
+                </div>
+                <div class="body-post-container-card">
+                    <div class="body-post-card">
+                        <img src="./img/post1.png" alt="image">
+                        <p>DESIGN</p>
+                        <h2>Truly it was a great journey
+                            and in it I met with many</h2>
+                        <span>14 November, 2019</span>
+                    </div>
+                    <div class="body-post-card">
+                        <img src="./img/post2.png" alt="image">
+                        <p>TECH</p>
+                        <h2>What looked like a small
+                            patch of purple grass</h2>
+                        <span>14 November, 2019</span>
+                    </div>
+                    <div class="body-post-card">
+                        <img src="./img/post3.png" alt="image">
+                        <p>LIFE </p>
+                        <h2>The roots were revolving
+                            small plant</h2>
+                        <span>14 November, 2019</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="contact">
+        <section style="background-color: var(--primary-color-black);">
+            <div class="body-say-bg">
+                <div class="flex-box footer-layout">
+                    <div class="half-screen">
+                        <h1 class="footer-title">News Letter Sign Up</h1>
+                    </div>
+                    <div class="half-screen pos-relative">
+                        <div class="footer-form-container">
+                            <div class="footer-form" style="padding: 48px; background: #FF564F;">
+                                <form action="">
+                                    <p>GET IN TOUCH</p>
+                                    <input type="text" placeholder="   Your email" required>
+                                    <button class="btn-sub">SUBSCRIBE</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr style="margin: 87px 0 73px 0; border-color: white;">
+                <div class="footer-menu-content">
+                    <div class="footer-menu-contrainer">
+                        <div class="footer-menu footer-menu-title">
+                            <h3>Agency</h3>
+                            <ul>
+                                <li>Agency © 2019.</li>
+                                <li>All Rights Reserved.</li>
+                            </ul>
+                        </div>
+                        <div class="footer-menu">
+                            <h3>Address</h3>
+                            <ul>
+                                <li class="text-bg-black">3899 Fusce Rd. Frederick </li>
+                                <li class="text-bg-black">Nebraska 20620</li>
+                                <li class="footer-text-spacing">info@agency.com</li>
+                                <li class="footer-text-spacing">+1 (234) 567-89-00</li>
+                            </ul>
+                        </div>
+                        <div class="footer-menu">
+                            <h3>Menu</h3>
+                            <ul>
+                                <li>About</li>
+                                <li>Portfolio</li>
+                                <li>Blog</li>
+                                <li>Testimonials</li>
+                                <li>Contact</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-logo">
+                        <img src="./img/FacebookLogo.svg" alt="image">
+                        <img src="./img/TwitterLogo.svg" alt="image">
+                        <img src="./img/InstagramLogo.svg" alt="image">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>
