@@ -11,17 +11,17 @@ let currentItemDEVELOPMENT = 0
 let currentItemBRANDING = 0
 let currentItemPRODUCTS = 0
 
+let currentSlide = 0
 
+// Function to open the sidebar
+function openSidebar() {
+    document.getElementById('sidebar').style.width = '250px';
+}
 
-const dataCard = fetch("./json/dataCard.json")
-    .then(response => {
-        return response.json();
-    })
-    .then(data => {
-        return data
-    });
-
-
+// Function to close the sidebar
+function closeSidebar() {
+    document.getElementById('sidebar').style.width = '0';
+}
 
 // Handle Play Video
 const handlePlayVideo = () => {
@@ -86,12 +86,11 @@ const handleBanner = (data, type, currentItem, visibleItems) => {
         if (data[i].type === type || type === "ALL") {
             a.push(data[i])
             showBanner(data[i])
-            console.log(count)
             count++
-            if(count>visibleItems-1){
+            if (count > visibleItems - 1) {
                 break
             }
-                
+
         }
     }
     if (visibleItems >= data.length) {
@@ -125,25 +124,7 @@ const handleLoadMore = (type, currentItem, visible) => {
     visibleItemsPRODUCTS += 2
 }
 
-
-let currentSlide = 0
-
-const handleBtnSlideLeft = () => {
-    return currentSlide - 550
-}
-
-
-function openSidebar() {
-    document.getElementById('sidebar').style.width = '250px';
-}
-
-// Function to close the sidebar
-function closeSidebar() {
-    document.getElementById('sidebar').style.width = '0';
-}
-
-
-// Slide
+// Slide Our
 let slideIndex = 1;
 
 function showSlides(n) {
@@ -164,8 +145,11 @@ function showSlides(n) {
 
 function currentSlideOur(n) {
     showSlides(slideIndex = n);
-
     const btn = document.querySelectorAll(".body-features-slide")
+
+    document.querySelector(".active-highlight")?.classList.remove("active-highlight")
+    btn[n - 1].classList.add("active-highlight")
+
     btn.forEach(element => {
         element.addEventListener("click", function () {
             document.querySelector(".active-highlight")?.classList.remove("active-highlight")
@@ -196,8 +180,6 @@ function showSlidesSay(n) {
     if (n < 1) {
         slideIndexSay = slidesCount;
     }
-    console.log(card.offsetWidth)
-    // slides.style.transform = `translateX(${-100 * (slideIndexSay - 1)}%)`;
     slides.style.transform = `translateX(${(-card.offsetWidth - 30) * (slideIndexSay - 1)}px)`;
 }
 
@@ -225,7 +207,6 @@ const handleChangeHeader = (n) => {
 
     banners.forEach(element => {
         if (banners[currentHeader - 1] == element) {
-            console.log(currentHeader)
             document.querySelector(".header-active")?.classList.remove("header-active")
             element.classList.add("header-active")
         }
@@ -245,16 +226,32 @@ const countBanner = document.querySelectorAll(".header-content-container").lengt
 document.querySelector(".body-advantage-tab-page").innerHTML = `${currentHeader + '/' + countBanner}`
 
 
+// FULL Width Mobile
+const widthMobile = window.matchMedia("(max-width: 700px)")
+if (widthMobile.matches) {
+    $(".text-center dot-container").append(`
+    <div onclick="currentSlideOur(5)" class="body-features-slide last-dot"></div>
+    `)
+}
+
 changeTab("ALL")
 handleChangeActiveBtn()
 
+// Auto Slide
 setInterval(nextSlideHeader, 5000);
 setInterval(nextSlide, 3000);
+
 let count = 0
-setInterval(()=>{
+setInterval(() => {
     count++
     currentSlideOur(count)
-    if(count>3){
-        count = 0
+    if (widthMobile.matches) {
+        if (count > 4) {
+            count = 0
+        }
+    } else {
+        if (count > 3) {
+            count = 0
+        }
     }
 }, 3000);
