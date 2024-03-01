@@ -13,6 +13,60 @@ let currentItemPRODUCTS = 0
 
 let currentSlide = 0
 
+// Animation Scroll
+function reveal() {
+    let reveals = document.querySelectorAll(".reveal");
+  
+    for (let i = 0; i < reveals.length; i++) {
+      let windowHeight = window.innerHeight;
+      let elementTop = reveals[i].getBoundingClientRect().top;
+      let elementVisible = 150;
+  
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("activeAnimation");
+      } else {
+        reveals[i].classList.remove("activeAnimation");
+      }
+    }
+  }
+  
+  window.addEventListener("scroll", reveal);
+  
+
+//Load Page
+$(document).ready(function () {
+    const getLoadPage = document.querySelector(".preloader")
+    window.addEventListener("load", ()=>{
+        setTimeout(()=>{
+            getLoadPage.remove();
+        }, 2000)
+    })
+
+})
+
+// Handle Go To Top Btn 
+let topBtnBeat = document.querySelector(".go-top-btn-beat");
+let topBtnEcho = document.querySelector(".go-top-btn-echo");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+    topBtnBeat.style.display = "block";
+    topBtnEcho.style.display = "block";
+  } else {
+    topBtnBeat.style.display = "none";
+    topBtnEcho.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+
 // Function to open the sidebar
 function openSidebar() {
     document.getElementById('sidebar').style.width = '250px';
@@ -148,7 +202,7 @@ function currentSlideOur(n) {
     const btn = document.querySelectorAll(".body-features-slide")
 
     document.querySelector(".active-highlight")?.classList.remove("active-highlight")
-    btn[n - 1].classList.add("active-highlight")
+    btn[n - 1]?.classList.add("active-highlight")
 
     btn.forEach(element => {
         element.addEventListener("click", function () {
@@ -227,9 +281,9 @@ document.querySelector(".body-advantage-tab-page").innerHTML = `${currentHeader 
 
 
 // FULL Width Mobile
-const widthMobile = window.matchMedia("(max-width: 700px)")
+const widthMobile = window.matchMedia("(max-width: 1200px)")
 if (widthMobile.matches) {
-    $(".text-center dot-container").append(`
+    $(".dot-container").append(`
     <div onclick="currentSlideOur(5)" class="body-features-slide last-dot"></div>
     `)
 }
@@ -238,7 +292,9 @@ changeTab("ALL")
 handleChangeActiveBtn()
 
 // Auto Slide
-setInterval(nextSlideHeader, 5000);
+setTimeout(() => {
+    setInterval(nextSlideHeader, 5000);
+}, 2000)
 setInterval(nextSlide, 3000);
 
 let count = 0

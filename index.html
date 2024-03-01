@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MGENCY</title>
-    <link rel="icon" type="image/x-icon" href="https://madison-technologies.com/wp-content/themes/madison/assets/images/favicon/madison-fav.svg">
+    <link rel="icon" type="image/x-icon"
+        href="https://madison-technologies.com/wp-content/themes/madison/assets/images/favicon/madison-fav.svg">
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,13 +18,16 @@
 </head>
 
 <body>
+    <div class="preloader"></div>
     <main class="main">
+        <button class="go-top-btn-beat" onclick="topFunction()">Top</button>
+        <button class="go-top-btn-echo" onclick="topFunction()">Top</button>
         <header>
             <!-- Nav BAR -->
             <section>
                 <div class="navbar">
                     <div class="header-bg flex-box" style="justify-content: space-between;">
-                        <div class="header-logo">AGENCY</div>
+                        <div class="header-logo"><a href="#header-content">AGENCY</a></div>
                         <div class="nav-right flex-box">
                             <nav class="nav-link full-width">
                                 <div class="nav-link-container">
@@ -47,7 +51,7 @@
                 <div class="header-bg">
 
                     <!-- HEADER-CONTENT -->
-                    <div>
+                    <div id="header-content">
                         <div class="pos-relative header-content-container header-active"
                             style="z-index: 1; width: 100%; padding-top: 70px;">
                             <div class="header-content">
@@ -71,9 +75,7 @@
                                 <h1 class="header-title">HELLO WORLD! HELLO WORLD! HELLO WORLD!</h1>
                                 <div class="flex-box">
                                     <img src="./img/Object.png" alt="image">
-                                    <h1 class="header-disctiption">A PEEP AT SOME DISTANT ORB HAS POWER TO RAISE AND
-                                        PURIFY
-                                    </h1>
+                                    <h1 class="header-disctiption">HELLO WORLD!HELLO WORLD!HELLO WORLD!HELLO WORLD!</h1>
                                 </div>
                             </div>
                             <div class="header-img-container">
@@ -89,7 +91,7 @@
         <!-- LETS TAKE ADVANTAGE -->
         <section>
             <div class="body-advantage-bg">
-                <div class="body-advantage-btn-container" style="padding: 150px 0px;">
+                <div class="body-advantage-btn-container reveal" style="padding: 150px 0px;">
                     <button onclick="prevSlideHeader()" class="body-advantage-btn-left" style="margin-right: 3px;"><img
                             src="./img/Triangle-left.svg" alt="image"></button>
                     <button onclick="nextSlideHeader()" class="body-advantage-btn-right"><img
@@ -97,7 +99,7 @@
                     <span class="body-advantage-tab-page"></span>
                 </div>
                 <hr>
-                <div class="flex-box body-advantage-layout" style="padding: 150px 0px;">
+                <div class="flex-box body-advantage-layout reveal" style="padding: 150px 0px;">
                     <div class="body-advantage-video half-screen">
                         <div class="body-advantage-video-banner text-center-x">
                             <img class="bg-video" src="./img/Image-Advantage.png" alt="image">
@@ -115,7 +117,8 @@
                             premium features code
                             and unlock more.</P>
                         <div class="flex-box">
-                            <a href="https://madison-technologies.com/" target="_blank"><button class="btn-learn_more">LEARN MORE</button></a>
+                            <a href="https://madison-technologies.com/" target="_blank"><button
+                                    class="btn-learn_more">LEARN MORE</button></a>
                             <button class="services-btn">Explore Services</button>
                         </div>
                     </div>
@@ -125,7 +128,7 @@
 
         <!-- OUR CORE FEATURES -->
         <section id="about" style="background-color: var(--primary-color-black);">
-            <div class="body-features-bg">
+            <div class="body-features-bg reveal">
                 <div class="flex-box body-features-layout">
                     <div class="half-screen">
                         <h1 class="body-features-title">OUR CORE FEATURES</h1>
@@ -193,14 +196,14 @@
                     <div onclick="currentSlideOur(2)" class="body-features-slide"></div>
                     <div onclick="currentSlideOur(3)" class="body-features-slide"></div>
                     <div onclick="currentSlideOur(4)" class="body-features-slide"></div>
-                    </div>
                 </div>
+            </div>
             </div>
         </section>
 
         <!-- CHECK OUR PROJECTS -->
         <section id="portfolio">
-            <div class="body-projects-bg">
+            <div class="body-projects-bg reveal">
                 <div class="flex-box body-projects-layout">
                     <div class="half-screen">
                         <h1 class="body-projects-title">CHECK OUR PROJECTS</h1>
@@ -249,7 +252,7 @@
 
         <!-- WHAT OUR CLIENTS SAY -->
         <section style="background-color: var(--primary-color-black);">
-            <div class="body-say-bg">
+            <div class="body-say-bg reveal">
                 <div class="flex-box body-say-layout">
                     <div class="half-screen">
                         <h1 class="body-say-title">WHAT OUR CLIENTS SAY</h1>
@@ -322,8 +325,9 @@
             </div>
         </section>
 
+        <!-- LOGO and OUR LATEST BLOG POSTS -->
         <section>
-            <div class="body-say-bg-logo" style="padding-bottom: 0 !important;">
+            <div class="body-say-bg-logo reveal" style="padding-bottom: 0 !important;">
                 <div class="body-features-btn-container" style="padding:0px;">
                     <button onclick="prevSlide()" class="body-stay-btn-left" style="margin-right: 3px;"><img
                             src="./img/Triangle-left.svg" alt="image"></button>
@@ -343,7 +347,7 @@
         </section>
 
         <section>
-            <div class="body-post-bg">
+            <div class="body-post-bg reveal">
                 <div class="flex-box body-post-layout">
                     <div class="half-screen">
                         <h1 class="body-projects-title">OUR LATEST BLOG POSTS</h1>
@@ -381,9 +385,11 @@
             </div>
         </section>
     </main>
+
+    <!-- Footer -->
     <footer id="contact">
         <section style="background-color: var(--primary-color-black);">
-            <div class="body-say-bg">
+            <div class="body-say-bg reveal">
                 <div class="flex-box footer-layout">
                     <div class="half-screen">
                         <h1 class="footer-title">News Letter Sign Up</h1>
