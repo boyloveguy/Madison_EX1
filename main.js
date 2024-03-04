@@ -1,43 +1,43 @@
 
-let visibleItemsAll = 2
-let visibleItemsDESIGN = 2
-let visibleItemsDEVELOPMENT = 2
-let visibleItemsBRANDING = 2
-let visibleItemsPRODUCTS = 2
+let visibleItems = 2
+// let visibleItemsDESIGN = 2
+// let visibleItemsDEVELOPMENT = 2
+// let visibleItemsBRANDING = 2
+// let visibleItemsPRODUCTS = 2
 
-let currentItemALL = 0
-let currentItemDESIGN = 0
-let currentItemDEVELOPMENT = 0
-let currentItemBRANDING = 0
-let currentItemPRODUCTS = 0
+let currentItem = 0
+// let currentItemDESIGN = 0
+// let currentItemDEVELOPMENT = 0
+// let currentItemBRANDING = 0
+// let currentItemPRODUCTS = 0
 
 let currentSlide = 0
 
 // Animation Scroll
 function reveal() {
     let reveals = document.querySelectorAll(".reveal");
-  
+
     for (let i = 0; i < reveals.length; i++) {
-      let windowHeight = window.innerHeight;
-      let elementTop = reveals[i].getBoundingClientRect().top;
-      let elementVisible = 150;
-  
-      if (elementTop < windowHeight - elementVisible) {
-        reveals[i].classList.add("activeAnimation");
-      } else {
-        reveals[i].classList.remove("activeAnimation");
-      }
+        let windowHeight = window.innerHeight;
+        let elementTop = reveals[i].getBoundingClientRect().top;
+        let elementVisible = 150;
+
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("activeAnimation");
+        } else {
+            reveals[i].classList.remove("activeAnimation");
+        }
     }
-  }
-  
-  window.addEventListener("scroll", reveal);
-  
+}
+
+window.addEventListener("scroll", reveal);
+
 
 //Load Page
 $(document).ready(function () {
     const getLoadPage = document.querySelector(".preloader")
-    window.addEventListener("load", ()=>{
-        setTimeout(()=>{
+    window.addEventListener("load", () => {
+        setTimeout(() => {
             getLoadPage.remove();
         }, 2000)
     })
@@ -48,22 +48,22 @@ $(document).ready(function () {
 let topBtnBeat = document.querySelector(".go-top-btn-beat");
 let topBtnEcho = document.querySelector(".go-top-btn-echo");
 
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
-  if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-    topBtnBeat.style.display = "block";
-    topBtnEcho.style.display = "block";
-  } else {
-    topBtnBeat.style.display = "none";
-    topBtnEcho.style.display = "none";
-  }
+    if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+        topBtnBeat.style.display = "block";
+        topBtnEcho.style.display = "block";
+    } else {
+        topBtnBeat.style.display = "none";
+        topBtnEcho.style.display = "none";
+    }
 }
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }
 
 
@@ -76,6 +76,16 @@ function openSidebar() {
 function closeSidebar() {
     document.getElementById('sidebar').style.width = '0';
 }
+
+
+// handle to close the sidebar when click out side
+window.addEventListener('click', (e) => {
+    const sidebar = document.getElementById('sidebar');
+    if (e.target.id !== 'sidebar' && e.target.className !== 'sidebar_toggler') {
+        sidebar.style.width = '0'
+    }
+});
+
 
 // Handle Play Video
 const handlePlayVideo = () => {
@@ -98,7 +108,7 @@ const handleChangeActiveBtn = () => {
 }
 
 // PROTFOLIO
-const changeTab = (nameTab) => {
+const changeTab = (nameTab, type) => {
     fetch("./json/dataCard.json")
         .then(response => {
             return response.json();
@@ -106,48 +116,51 @@ const changeTab = (nameTab) => {
         .then(data => {
             switch (nameTab) {
                 case 'ALL':
-                    handleBanner(data, "ALL", currentItemALL, visibleItemsAll)
+                    handleBanner(data, "ALL")
                     break;
                 case 'DESIGN':
-                    handleBanner(data, 'DESIGN', currentItemDESIGN, visibleItemsDESIGN)
+                    handleBanner(data, 'DESIGN')
                     break;
                 case 'DEVELOPMENT':
-                    handleBanner(data, 'DEVELOPMENT', currentItemDEVELOPMENT, visibleItemsDEVELOPMENT)
+                    handleBanner(data, 'DEVELOPMENT')
                     break;
                 case 'BRANDING':
-                    handleBanner(data, 'BRANDING', currentItemBRANDING, visibleItemsBRANDING)
+                    handleBanner(data, 'BRANDING')
                     break;
                 case 'PRODUCTS':
-                    handleBanner(data, 'PRODUCTS', currentItemPRODUCTS, visibleItemsPRODUCTS)
+                    handleBanner(data, 'PRODUCTS')
                     break;
                 default:
             }
         });
+    if (type == "Tab") {
+        visibleItems = 2
+        document.querySelector(".btn-load_more").classList.remove("inactive");
+    }
 }
 
 
-const handleBanner = (data, type, currentItem, visibleItems) => {
+const handleBanner = (data, type) => {
     $(document).ready(function () {
         $(".body-projects-card-container")?.empty()
         const loadMoreBtn = $(".btn-load_more")
-        loadMoreBtn.attr("onclick", `handleLoadMore('${type}', '${currentItem}', '${visibleItems}')`)
+        loadMoreBtn.attr("onclick", `handleLoadMore('${type}')`)
     })
 
     let count = 0
-    let a = []
+
+    const result = data.filter((item) => type == 'ALL' ? true : item.type == type)
 
     for (let i = currentItem; i < data.length; i++) {
         if (data[i].type === type || type === "ALL") {
-            a.push(data[i])
             showBanner(data[i])
             count++
             if (count > visibleItems - 1) {
                 break
             }
-
         }
     }
-    if (visibleItems >= data.length) {
+    if (visibleItems >= result.length) {
         $(".btn-load_more").addClass("inactive");
     }
 }
@@ -163,19 +176,15 @@ const showBanner = (item) => {
                 <h2>${item.title}</h2>
             </div>
             <div>
-                <img style="${item.position}" src="${item.image}" alt="">
+                <img style="${item.position}" src="${item.image}" alt="image">
             </div>
         </div>`)
     })
 }
 
-const handleLoadMore = (type, currentItem, visible) => {
-    changeTab(type)
-    visibleItemsAll += 2
-    visibleItemsDESIGN += 2
-    visibleItemsDEVELOPMENT += 2
-    visibleItemsBRANDING += 2
-    visibleItemsPRODUCTS += 2
+const handleLoadMore = (type) => {
+    changeTab(type, 'LoadMore')
+    visibleItems += 2
 }
 
 // Slide Our

@@ -42,7 +42,7 @@
                                     <a href="#contact">Contact</a>
                                 </div>
                                 <div class="header-menu-icon">
-                                    <img onclick="openSidebar()" src="./img/menu.svg" alt="image">
+                                    <img class="sidebar_toggler" onclick="openSidebar()" src="./img/menu.svg" alt="image">
                                 </div>
                             </nav>
                         </div>
@@ -220,17 +220,17 @@
                     <div class="grid-item body-projects-menu">
                         <h3 class="body-projects-menu-title">PORTFOLIO</h3>
                         <div class="body-projects-menu-side">
-                            <button onclick="changeTab('ALL')" class="body-projects-btn-active">All</button>
-                            <button onclick="changeTab('DESIGN')">Design</button>
-                            <button onclick="changeTab('DEVELOPMENT')">Development</button>
-                            <button onclick="changeTab('BRANDING')">Branding</button>
-                            <button onclick="changeTab('PRODUCTS')">Products</button>
+                            <button onclick="changeTab('ALL', 'Tab')" class="body-projects-btn-active">All</button>
+                            <button onclick="changeTab('DESIGN', 'Tab')">Design</button>
+                            <button onclick="changeTab('DEVELOPMENT', 'Tab')">Development</button>
+                            <button onclick="changeTab('BRANDING', 'Tab')">Branding</button>
+                            <button onclick="changeTab('PRODUCTS', 'Tab')">Products</button>
                         </div>
                     </div>
                     <div class="grid-item body-projects-menu-selection">
                         <h3 class="body-projects-menu-title">PORTFOLIO</h3>
                         <div class="body-projects-menu-side">
-                            <select name="cars" id="cars" onchange="changeTab(value)">
+                            <select name="cars" id="cars" onchange="changeTab(value, 'Tab')">
                                 <option value="ALL">All</option>
                                 <option value="DESIGN">Design</option>
                                 <option value="DEVELOPMENT">Development</option>

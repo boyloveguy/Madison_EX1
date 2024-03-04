@@ -20,8 +20,8 @@ html {
 
 main {
     animation: showUp;
-    animation-duration: 1.5s;
-    animation-delay: 1.9s;
+    animation-duration: 1.7s;
+    animation-delay: 1.7s;
 }
 
 .preloader {

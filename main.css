@@ -61,7 +61,6 @@ a, li{
 .flex-box {
     display: flex;
     align-items: center;
-    /* flex-wrap: wrap; */
 }
 
 .pos-relative {
