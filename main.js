@@ -1,15 +1,6 @@
-
 let visibleItems = 2
-// let visibleItemsDESIGN = 2
-// let visibleItemsDEVELOPMENT = 2
-// let visibleItemsBRANDING = 2
-// let visibleItemsPRODUCTS = 2
 
 let currentItem = 0
-// let currentItemDESIGN = 0
-// let currentItemDEVELOPMENT = 0
-// let currentItemBRANDING = 0
-// let currentItemPRODUCTS = 0
 
 let currentSlide = 0
 
@@ -36,9 +27,10 @@ window.addEventListener("scroll", reveal);
 //Load Page
 $(document).ready(function () {
     const getLoadPage = document.querySelector(".preloader")
-    window.addEventListener("load", () => {
+    $(window).on('load',function(){
         setTimeout(() => {
-            getLoadPage.remove();
+            // getLoadPage.remove();
+            getLoadPage.classList.add("inactive");
         }, 2000)
     })
 

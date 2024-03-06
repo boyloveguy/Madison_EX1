@@ -20,8 +20,8 @@
 <body>
     <div class="preloader"></div>
     <main class="main">
-        <button class="go-top-btn-beat" onclick="topFunction()">Top</button>
-        <button class="go-top-btn-echo" onclick="topFunction()">Top</button>
+        <button class="go-top-btn-beat" onclick="topFunction()">⬆</button>
+        <button class="go-top-btn-echo" onclick="topFunction()">⬆</button>
         <header>
             <!-- Nav BAR -->
             <section>
@@ -36,13 +36,14 @@
                                     <a class="nav-option" href="#contact">Contact</a>
                                 </div>
                                 <div id="sidebar" class="sidebar">
-                                    <a href="javascript:void(0)" class="close-btn" onclick="closeSidebar()">×</a>
+                                    <a href="javascript:void(0)" class="close-btn" onclick="closeSidebar()">❌</a>
                                     <a href="#about">About</a>
                                     <a href="#portfolio">Portfolio</a>
                                     <a href="#contact">Contact</a>
                                 </div>
                                 <div class="header-menu-icon">
-                                    <img class="sidebar_toggler" onclick="openSidebar()" src="./img/menu.svg" alt="image">
+                                    <img class="sidebar_toggler" onclick="openSidebar()" src="./img/menu.svg"
+                                        alt="image">
                                 </div>
                             </nav>
                         </div>
@@ -64,7 +65,7 @@
                                 </div>
                             </div>
                             <div class="header-img-container">
-                                <img class="header-shadow-img" src="./img/Combined Shape.png" alt="image">
+                                <img class="header-shadow-img" src="./img/combined-shape.png" alt="image">
                                 <img class="header-bg-img" src="./img/Rectangle.png" alt="image">
                                 <img class="header-img" src="./img/Bitmap.png" alt="image">
                             </div>
@@ -79,7 +80,7 @@
                                 </div>
                             </div>
                             <div class="header-img-container">
-                                <img class="header-shadow-img" src="./img/Combined Shape.png" alt="image">
+                                <img class="header-shadow-img" src="./img/combined-shape.png" alt="image">
                                 <img class="header-bg-img" src="./img/Rectangle.png" alt="image">
                                 <img class="header-img" src="./img/Bitmap.png" alt="image">
                             </div>
@@ -117,8 +118,8 @@
                             premium features code
                             and unlock more.</P>
                         <div class="flex-box">
-                            <a href="https://madison-technologies.com/" target="_blank"><button
-                                    class="btn-learn_more">LEARN MORE</button></a>
+                            <button class="btn-learn_more"><a href="https://madison-technologies.com/"
+                                    target="_blank">LEARN MORE</a></button>
                             <button class="services-btn">Explore Services</button>
                         </div>
                     </div>
@@ -198,7 +199,6 @@
                     <div onclick="currentSlideOur(4)" class="body-features-slide"></div>
                 </div>
             </div>
-            </div>
         </section>
 
         <!-- CHECK OUR PROJECTS -->
@@ -230,7 +230,7 @@
                     <div class="grid-item body-projects-menu-selection">
                         <h3 class="body-projects-menu-title">PORTFOLIO</h3>
                         <div class="body-projects-menu-side">
-                            <select name="cars" id="cars" onchange="changeTab(value, 'Tab')">
+                            <select onchange="changeTab(value, 'Tab')">
                                 <option value="ALL">All</option>
                                 <option value="DESIGN">Design</option>
                                 <option value="DEVELOPMENT">Development</option>
@@ -326,7 +326,7 @@
         </section>
 
         <!-- LOGO and OUR LATEST BLOG POSTS -->
-        <section>
+        <div>
             <div class="body-say-bg-logo" style="padding-bottom: 0 !important;">
                 <div class="body-features-btn-container" style="padding:0px;">
                     <button onclick="prevSlide()" class="body-stay-btn-left" style="margin-right: 3px;"><img
@@ -336,15 +336,15 @@
                 </div>
                 <hr style="margin: 87px 0 73px 0;">
                 <div class="logo-container reveal">
-                    <img src="./img/Atlassian.png" alt="image">
-                    <img src="./img/Slack.png" alt="image">
-                    <img src="./img/Dropbox.png" alt="image">
-                    <img src="./img/Shopify.png" alt="image">
-                    <img src="./img/Google.png" alt="image">
+                    <a href="https://www.atlassian.com/" target="_blank"><img src="./img/Atlassian-Logo.png" alt="image"></a>
+                    <a href="https://slack.com/" target="_blank"><img class="slack-logo" src="./img/Slack-logo.png" alt="image"></a>
+                    <a href="https://www.dropbox.com/" target="_blank"><img class="dropbox-logo" src="./img/dropbox-logo.png" alt="image"></a>
+                    <a href="https://www.shopify.com/vn" target="_blank"><img src="./img/Shopify_Logo.png" alt="image"></a>
+                    <a href="https://www.google.com.vn/?hl=vi" target="_blank"><img class="google-logo" src="./img/Google-Logo.png" alt="image"></a>
                 </div>
                 <hr style="margin-top: 87px">
             </div>
-        </section>
+        </div>
 
         <section>
             <div class="body-post-bg reveal">
@@ -361,25 +361,31 @@
                 </div>
                 <div class="body-post-container-card">
                     <div class="body-post-card">
-                        <img src="./img/post1.png" alt="image">
-                        <p>DESIGN</p>
-                        <h2>Truly it was a great journey
-                            and in it I met with many</h2>
-                        <span>14 November, 2019</span>
+                        <div class="body-post-card-container">
+                            <img src="./img/post1.png" alt="image">
+                            <p>DESIGN</p>
+                            <h2>Truly it was a great journey
+                                and in it I met with many</h2>
+                            <span>14 November, 2019</span>
+                        </div>
                     </div>
                     <div class="body-post-card">
-                        <img src="./img/post2.png" alt="image">
-                        <p>TECH</p>
-                        <h2>What looked like a small
-                            patch of purple grass</h2>
-                        <span>14 November, 2019</span>
+                        <div class="body-post-card-container">
+                            <img src="./img/post2.png" alt="image">
+                            <p>TECH</p>
+                            <h2>What looked like a small
+                                patch of purple grass</h2>
+                            <span>14 November, 2019</span>
+                        </div>
                     </div>
                     <div class="body-post-card">
-                        <img src="./img/post3.png" alt="image">
-                        <p>LIFE </p>
-                        <h2>The roots were revolving
-                            small plant</h2>
-                        <span>14 November, 2019</span>
+                        <div class="body-post-card-container">
+                            <img src="./img/post3.png" alt="image">
+                            <p>LIFE </p>
+                            <h2>The roots were revolving
+                                small plant</h2>
+                            <span>14 November, 2019</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -397,9 +403,9 @@
                     <div class="half-screen pos-relative">
                         <div class="footer-form-container">
                             <div class="footer-form" style="padding: 48px; background: #FF564F;">
-                                <form action="">
+                                <form action="#">
                                     <p>GET IN TOUCH</p>
-                                    <input type="text" placeholder="   Your email" required>
+                                    <input type="text" placeholder="Your email" required>
                                     <button class="btn-sub">SUBSCRIBE</button>
                                 </form>
                             </div>
@@ -421,8 +427,9 @@
                             <ul>
                                 <li class="text-bg-black">3899 Fusce Rd. Frederick </li>
                                 <li class="text-bg-black">Nebraska 20620</li>
-                                <li class="footer-text-spacing">info@agency.com</li>
-                                <li class="footer-text-spacing">+1 (234) 567-89-00</li>
+                                <li class="footer-text-spacing"><a href="mailto:info@agency.com">info@agency.com</a>
+                                </li>
+                                <li class="footer-text-spacing"><a href="tel:+12345678900">+1 (234) 567-89-00</a></li>
                             </ul>
                         </div>
                         <div class="footer-menu">
